@@ -359,9 +359,6 @@ func (t *eftlTrigger) Start() error {
 	// Error channel for receiving connection errors
 	errChan := make(chan error, 1)
 
-	//Create the subsription channel [1]
-	//subChan := make(chan *eftl.Subscription, 1)
-
 	// set connection options
 	opts := &eftl.Options{
 		ClientID:  wsClientID,
@@ -442,9 +439,6 @@ func (t *eftlTrigger) Start() error {
 			} else {
 				span.Error("Matcher %s not found", matcher)
 			}
-			//actionId := t.config.Handlers[chosen].ActionId
-			//log.Debugf("About to run action for Id [%s]", actionId)
-			//t.RunAction(actionId, message, destination, subject)
 
 		}
 	}
@@ -514,7 +508,6 @@ func convert(b []byte) string {
 	return string(b[:n])
 }
 
-//func (t *eftlTrigger) createMatcher(handler *trigger.HandlerConfig) string {
 func createMatcher(handler *trigger.HandlerConfig) string {
 	// create the message content matcher
 	//complex matcher format like '{"_dest":"subject"}' can be used directly
