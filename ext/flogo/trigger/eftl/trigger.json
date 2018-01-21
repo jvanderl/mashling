@@ -1,12 +1,12 @@
 {
   "name": "eftl",
   "type": "flogo:trigger",
-  "ref": "github.com/jvanderl/flogo-components/trigger/eftl",
+  "ref": "github.com/jvanderl/mashling/ext/flogo/trigger/eftl",
   "version": "0.0.1",
   "title": "Receive eFTL Message",
   "description": "eFTL Subscriber",
   "author": "Jan van der Lugt <jvanderl@tibco.com>",
-  "homepage": "https://github.com/jvanderl/flogo-components/tree/master/trigger/eftl",
+  "homepage": "https://github.com/jvanderl/mashling/tree/master/ext/flogo/trigger/eftl",
   "settings":[
     {
       "name": "server",
@@ -42,6 +42,36 @@
       "name": "certificate",
       "type": "string",
       "required" : false
+    },
+    {
+      "name": "tracer",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tracerEndpoint",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tracerToken",
+      "type": "string",
+      "required": false
+    },
+    {
+      "name": "tracerDebug",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "tracerSameSpan",
+      "type": "boolean",
+      "required": false
+    },
+    {
+      "name": "tracerID128Bit",
+      "type": "boolean",
+      "required": false
     }
   ],
   "outputs": [
@@ -56,6 +86,10 @@
     {
       "name": "subject",
       "type": "string"
+    },
+    {
+      "name": "tracing",
+      "type": "any"
     }
   ],
   "handler": {
@@ -82,6 +116,11 @@
       },
       {
         "name": "durablename",
+        "type": "string",
+        "required" : false
+      },
+      {
+        "name": "condition",
         "type": "string",
         "required" : false
       }
