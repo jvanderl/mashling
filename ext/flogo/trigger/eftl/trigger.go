@@ -23,8 +23,8 @@ import (
 	lightstep "github.com/lightstep/lightstep-tracer-go"
 	opentracing "github.com/opentracing/opentracing-go"
 	zipkin "github.com/openzipkin/zipkin-go-opentracing"
-	"sourcegraph.com/sourcegraph/appdash"
-	appdashtracing "sourcegraph.com/sourcegraph/appdash/opentracing"
+	"github.com/sourcegraph/appdash"
+	appdashtracing "github.com/sourcegraph/appdash/opentracing"
 	//	"strings"
 )
 
